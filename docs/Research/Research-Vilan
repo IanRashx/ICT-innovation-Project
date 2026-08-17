@@ -1,0 +1,128 @@
+# Agent Resilience – LLM Jailbreak Detection and Security
+
+## Project Overview
+
+This project focuses on researching and developing methods to improve the security and resilience of Large Language Model (LLM) applications and AI agents against **jailbreak attacks, prompt injection, and malicious prompts**.
+
+The aim is to investigate existing security tools, datasets, frameworks, and detection models and use this research to design a multi-layer defence system for LLM-based agents.
+
+## Problem
+
+LLMs can sometimes be manipulated using specially designed prompts that attempt to bypass their safety rules. These attacks may include:
+
+* Direct jailbreak attacks
+* Prompt injection
+* Indirect prompt injection
+* Role-playing attacks
+* Obfuscated prompts
+* Multi-turn jailbreaks
+* Instruction override attacks
+* Agent/tool manipulation
+
+This becomes more serious when an LLM is connected to external tools such as databases, files, APIs, browsers, or email services.
+
+## Research Areas
+
+The project research focuses on:
+
+### Existing Security Frameworks
+
+* **NVIDIA Garak** – LLM vulnerability scanner used to test jailbreaks and other weaknesses.
+* **Microsoft PyRIT** – AI red-teaming framework for testing generative AI security.
+* **Promptfoo** – LLM testing and red-teaming framework.
+* **DeepTeam** – Framework for automated security testing of LLM applications.
+* **Agentic Radar** – Security analysis tool for AI agents.
+
+### Datasets and Benchmarks
+
+* **JailbreakBench** – Benchmark for evaluating jailbreak attacks and defences.
+* **HarmBench** – Framework for testing automated attacks and measuring model resilience.
+* **AdvBench** – Dataset containing harmful and adversarial prompts.
+* **InjecAgent** – Dataset designed for testing indirect prompt injection attacks against AI agents.
+* **Agent Security Bench (ASB)** – Benchmark for evaluating security risks in LLM-based agents.
+
+### Existing Detection Models
+
+* **Meta Prompt Guard** – Model designed to detect jailbreak and prompt-injection attempts.
+* **ProtectAI DeBERTa Prompt Injection Detector** – Machine-learning model used to classify malicious and normal prompts.
+* **Rule-Based Detection** – Detects suspicious words, patterns, and instructions.
+* **LLM-as-a-Judge** – Uses another LLM to evaluate whether a prompt or response is potentially malicious.
+
+## Proposed Solution
+
+The proposed system will use multiple security layers instead of depending on a single detection method.
+
+```text
+User Prompt
+     |
+     v
+Rule-Based Detection
+     |
+     v
+Machine Learning Detector
+     |
+     v
+Risk Score
+     |
+     +------ Safe ------> LLM / Agent
+     |
+     +------ Risky -----> Block / Flag
+                              |
+                              v
+                     Security Dashboard
+```
+
+The system may classify prompts into:
+
+* **Safe**
+* **Suspicious**
+* **Malicious / Jailbreak**
+
+## Evaluation
+
+The system can be evaluated using metrics such as:
+
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* False Positive Rate
+* False Negative Rate
+* Attack Success Rate (ASR)
+
+A lower Attack Success Rate indicates that the system is more resistant to jailbreak attacks.
+
+## Expected Outcome
+
+The expected outcome is a practical **LLM Jailbreak Detection and Adaptive Defence System** that can identify potentially malicious prompts before they reach an AI agent.
+
+The system should also help demonstrate how combining rule-based detection, machine-learning models, and response monitoring can improve the security of LLM applications.
+
+## Current Research Finding
+
+The research shows that there is no single method that can detect every jailbreak attack. Basic keyword filtering may identify obvious attacks but can fail against more advanced techniques such as obfuscation, multi-turn attacks, indirect prompt injection, and role-playing.
+
+Therefore, a **multi-layer security approach** is considered more suitable for improving the resilience of LLM-based agents.
+
+## Technologies / Resources
+
+Possible technologies and resources include:
+
+* Python
+* Machine Learning
+* Hugging Face Transformers
+* Meta Prompt Guard
+* ProtectAI DeBERTa
+* Garak
+* PyRIT
+* Promptfoo
+* JailbreakBench
+* HarmBench
+* AdvBench
+* InjecAgent
+
+## Project Goal
+
+The main goal of this project is to:
+
+> **Research, design, and evaluate a security system capable of detecting jailbreak and prompt-injection attacks and improving the resilience of LLM-based AI agents.**
