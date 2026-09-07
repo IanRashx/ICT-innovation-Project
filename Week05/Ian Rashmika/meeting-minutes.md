@@ -10,7 +10,7 @@ Week 5 – Requirements to Implementation
 
 ## Date
 
-[ENTER ACTUAL DATE]
+07/09/2026
 
 ## Meeting / Workshop
 
